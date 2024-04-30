@@ -4,6 +4,7 @@ import org.ferhat.core.HibernateSession;
 import org.ferhat.dao.abstracts.ICustomerDao;
 import org.ferhat.entities.Customer;
 import org.hibernate.Session;
+import org.hibernate.query.SelectionQuery;
 
 import java.util.List;
 
@@ -44,5 +45,12 @@ public class CustomerDao implements ICustomerDao {
     @Override
     public List<Customer> getAll() {
         return this.session.createSelectionQuery("FROM Customer", Customer.class).getResultList();
+    }
+
+    @Override
+    public Customer findByMail(String mail) {
+        SelectionQuery<Customer> query = this.session.createSelectionQuery("FROM Customer WHERE mail = :mail", Customer.class);
+        query.setParameter("mail", mail);
+        return query.getSingleResultOrNull();
     }
 }

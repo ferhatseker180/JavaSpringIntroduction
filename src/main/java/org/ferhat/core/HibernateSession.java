@@ -10,16 +10,12 @@ public class HibernateSession {
     public static Session session = null;
 
     public static Session getSession() {
-        try {
-            if (session == null) {
-                SessionFactory sessionFactory = new Configuration().
-                        configure("hibernate.cfg.xml").
-                        addAnnotatedClass(Customer.class).buildSessionFactory();
 
-                session = sessionFactory.openSession();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (session == null) {
+            SessionFactory sessionFactory = new Configuration().
+                    configure("hibernate.cfg.xml").
+                    addAnnotatedClass(Customer.class).buildSessionFactory();
+            session = sessionFactory.openSession();
         }
         return session;
     }

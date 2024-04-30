@@ -1,14 +1,20 @@
-package org.ferhat.dao.abstracts;
+package org.ferhat.business.abstracts;
 
+import org.ferhat.dao.abstracts.ICustomerDao;
 import org.ferhat.entities.Customer;
 
 import java.util.List;
 
-public interface ICustomerDao {
+public interface ICustomerServices {
     void save(Customer customer);
+
     void update(Customer customer);
-    void delete(Customer customer);
+
+    void deleteById(int id);
+
     Customer getById(int id);
+
     List<Customer> getAll();
+
     Customer findByMail(String mail);
 }
