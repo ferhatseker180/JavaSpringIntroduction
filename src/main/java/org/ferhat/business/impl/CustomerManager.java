@@ -2,7 +2,6 @@ package org.ferhat.business.impl;
 
 import org.ferhat.business.abstracts.ICustomerServices;
 import org.ferhat.dao.abstracts.ICustomerDao;
-import org.ferhat.dao.impl.CustomerDao;
 import org.ferhat.entities.Customer;
 
 import java.util.List;

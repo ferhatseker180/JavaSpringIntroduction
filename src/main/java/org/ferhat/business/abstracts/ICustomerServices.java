@@ -1,6 +1,5 @@
 package org.ferhat.business.abstracts;
 
-import org.ferhat.dao.abstracts.ICustomerDao;
 import org.ferhat.entities.Customer;
 
 import java.util.List;
